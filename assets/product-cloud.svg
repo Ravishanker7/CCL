@@ -1,0 +1,11 @@
+<svg width="900" height="500" viewBox="0 0 900 500" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="900" height="500" fill="#FFF1F7"/>
+  <rect x="170" y="300" width="560" height="92" rx="16" fill="#F1C6D9"/>
+  <rect x="170" y="250" width="560" height="58" rx="12" fill="#F8DEEB"/>
+  <rect x="160" y="218" width="580" height="44" rx="16" fill="#FFFFFF"/>
+  <ellipse cx="300" cy="122" rx="46" ry="24" fill="#FFFFFF"/>
+  <ellipse cx="360" cy="122" rx="56" ry="28" fill="#FFFFFF"/>
+  <ellipse cx="425" cy="122" rx="46" ry="24" fill="#FFFFFF"/>
+  <text x="450" y="204" text-anchor="middle" font-family="Arial, sans-serif" font-size="46" font-weight="800" fill="#B6477E">Cloud Soft</text>
+  <text x="450" y="252" text-anchor="middle" font-family="Arial, sans-serif" font-size="24" font-weight="600" fill="#C76A97">Ultra Plush Memory Foam</text>
+</svg>

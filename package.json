@@ -1,0 +1,13 @@
+{
+  "name": "ccl-website",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Comfort Cave — handcrafted mattress brand website",
+  "scripts": {
+    "dev": "npx --yes serve . -p 3000",
+    "start": "npx --yes serve . -p 3000",
+    "preview": "npx --yes serve . -p 3000"
+  },
+  "keywords": ["comfort-cave", "mattress", "static-site"],
+  "license": "UNLICENSED"
+}

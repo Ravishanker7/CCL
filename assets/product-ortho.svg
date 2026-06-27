@@ -1,0 +1,9 @@
+<svg width="900" height="500" viewBox="0 0 900 500" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="900" height="500" fill="#EFFAF2"/>
+  <rect x="170" y="302" width="560" height="90" rx="16" fill="#B9DEC6"/>
+  <rect x="170" y="258" width="560" height="52" rx="10" fill="#D9EFDF"/>
+  <rect x="160" y="226" width="580" height="40" rx="16" fill="#FFFFFF"/>
+  <path d="M250 284 C290 244 330 244 370 284 C410 324 450 324 490 284 C530 244 570 244 610 284" stroke="#5AA678" stroke-width="8" stroke-linecap="round"/>
+  <text x="450" y="100" text-anchor="middle" font-family="Arial, sans-serif" font-size="46" font-weight="800" fill="#1F7A46">Ortho Support</text>
+  <text x="450" y="148" text-anchor="middle" font-family="Arial, sans-serif" font-size="24" font-weight="600" fill="#2E9A5D">Spine Alignment Mattress</text>
+</svg>
