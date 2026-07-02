@@ -659,19 +659,14 @@
       min-height: 88vh;
     }
     .layers-wrap, .about-wrap, .store-wrap, .guide-wrap { grid-template-columns: 1fr; }
-    .layers-wrap { gap: 40px; }
+    .layers-wrap { gap: 50px; }
     .layers-stack {
-      position: relative;
-      height: auto;
-      padding-top: 20px;
+      height: 420px;
+      margin-bottom: 16px;
     }
     .layer {
-      position: static;
-      width: 100%;
-      max-width: 420px;
-      left: auto;
-      transform: none;
-      margin: 0 auto 16px;
+      width: 280px;
+      margin: 0 auto;
     }
     .footer-grid { grid-template-columns: 1fr 1fr; }
     .about-card-small { display: none; }
@@ -691,8 +686,8 @@
     .hero-sub { font-size: 1rem; max-width: 100%; }
     .hero-btns { flex-direction: column; }
     .btn-primary, .btn-outline { width: 100%; max-width: 340px; }
-    .layers-stack { padding-top: 0; }
-    .layer { max-width: 100%; }
+    .layers-stack { height: 420px; }
+    .layer { width: 260px; margin: 0 auto; }
     .layer:hover { box-shadow: var(--shadow); }
     .footer-grid { grid-template-columns: 1fr; }
     .footer-bottom { flex-direction: column; text-align: center; }
