@@ -200,58 +200,167 @@
   .section-header.center .section-sub { margin: 0 auto; }
 
   /* ─── LAYER ANIMATION ─── */
-  .layers-section {
-    background: linear-gradient(160deg, #FBF6F0, #F7F1EA);
+  .best-sellers-section {
+    background: linear-gradient(160deg, #FBF6F0, #F9F4EC);
   }
-  .layers-wrap {
-    display: grid; grid-template-columns: 1fr 1fr; gap: 80px;
+  .best-sellers-grid {
+    display: grid; grid-template-columns: repeat(3, 1fr);
+    gap: 28px;
+    margin-top: 40px;
+  }
+  .best-card {
+    background: white;
+    border-radius: 28px;
+    overflow: hidden;
+    box-shadow: var(--shadow);
+    transition: transform 0.3s, box-shadow 0.3s;
+    display: flex;
+    flex-direction: column;
+  }
+  .best-card:hover {
+    transform: translateY(-10px);
+    box-shadow: var(--shadow-lg);
+  }
+  .best-card-tag {
+    display: inline-flex;
     align-items: center;
+    padding: 10px 16px;
+    margin: 20px 20px 0;
+    border-radius: 999px;
+    background: rgba(241,216,180,0.35);
+    color: #9A5A2B;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    width: fit-content;
   }
-  .layers-stack {
-    position: relative; height: 360px;
-    perspective: 800px;
-    display: flex; align-items: flex-end; justify-content: center;
+  .best-card-img {
+    width: 100%; min-height: 260px;
+    background: linear-gradient(135deg, #F7EFE6, #FCF7F2);
+    display: grid; place-items: center;
   }
-  .layer {
+  .best-card-img img {
+    width: 100%; height: 100%; object-fit: cover;
+    transition: transform 0.5s ease;
+  }
+  .best-card:hover .best-card-img img {
+    transform: scale(1.04);
+  }
+  .best-card-body {
+    padding: 24px 26px 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+  .best-card-rating {
+    color: #B57B2E;
+    font-size: 0.92rem;
+    font-weight: 700;
+  }
+  .best-card-rating span {
+    color: var(--text-muted);
+    font-size: 0.85rem;
+    font-weight: 500;
+    margin-left: 8px;
+  }
+  .best-card-body h3 {
+    font-size: 1.25rem;
+    font-weight: 800;
+    line-height: 1.2;
+    margin-top: 4px;
+  }
+  .product-pricing {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 12px;
+  }
+  .product-price {
+    font-size: 1.55rem;
+    font-weight: 800;
+    color: #2C1A0E;
+  }
+  .product-old-price {
+    color: var(--text-muted);
+    text-decoration: line-through;
+    font-size: 0.95rem;
+  }
+  .product-discount {
+    background: rgba(239,113,98,0.12);
+    color: #C0392B;
+    font-weight: 700;
+    font-size: 0.82rem;
+    padding: 6px 12px;
+    border-radius: 999px;
+  }
+  .best-card-list {
+    list-style: none;
+    display: grid;
+    gap: 10px;
+    padding-left: 0;
+    margin: 0;
+    color: var(--text-muted);
+    font-size: 0.92rem;
+  }
+  .best-card-list li {
+    position: relative;
+    padding-left: 22px;
+  }
+  .best-card-list li::before {
+    content: '•';
     position: absolute;
-    width: 340px; height: 52px; border-radius: 12px;
-    left: 50%; transform: translateX(-50%);
+    left: 0;
+    top: 0;
+    color: var(--accent);
+    font-size: 1.2rem;
+    line-height: 1;
+  }
+  .size-choices {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 10px;
+  }
+  .size-option {
+    border: 1px solid rgba(226,201,180,0.8);
+    border-radius: 999px;
+    padding: 10px 12px;
+    background: white;
+    color: var(--text);
+    font-size: 0.82rem;
+    font-weight: 600;
     cursor: pointer;
-    transition: transform 0.5s cubic-bezier(0.34,1.56,0.64,1), box-shadow 0.3s;
-    display: flex; align-items: center; justify-content: center;
-    font-size: 0.78rem; font-weight: 600; letter-spacing: 0.5px;
-    box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+    transition: all 0.2s;
   }
-  .layer:hover { box-shadow: 0 12px 44px rgba(60,31,27,0.18); }
-  .layer-1 { background: #F6EDE2; color: #3C1F1B; bottom: 0; }
-  .layer-2 { background: #F1E4D6; color: #3C1F1B; bottom: 52px; }
-  .layer-3 { background: #ECDCCB; color: #3C1F1B; bottom: 104px; }
-  .layer-4 { background: #E6D2BD; color: #3C1F1B; bottom: 156px; }
-  .layer-5 { background: #E2C9B4; color: #2A1613; bottom: 208px; }
-
-  .layers-exploded .layer-1 { transform: translateX(-50%) translateY(0); }
-  .layers-exploded .layer-2 { transform: translateX(-50%) translateY(-20px); }
-  .layers-exploded .layer-3 { transform: translateX(-50%) translateY(-50px); }
-  .layers-exploded .layer-4 { transform: translateX(-50%) translateY(-90px); }
-  .layers-exploded .layer-5 { transform: translateX(-50%) translateY(-140px); }
-
-  .layer-list { list-style: none; margin-top: 32px; }
-  .layer-item {
-    display: flex; gap: 16px; align-items: flex-start;
-    padding: 16px 0; border-bottom: 1px solid rgba(226,201,180,0.55);
-    opacity: 0.5; transition: opacity 0.3s;
+  .size-option.active {
+    background: var(--accent);
+    color: white;
+    border-color: transparent;
   }
-  .layer-item.active { opacity: 1; }
-  .layer-num {
-    width: 32px; height: 32px; border-radius: 50%;
-    background: var(--primary); color: var(--accent-dark);
-    font-family: 'Fraunces', serif; font-weight: 700; font-size: 0.8rem;
-    display: flex; align-items: center; justify-content: center;
-    flex-shrink: 0;
+  .btn-buy {
+    background: var(--accent);
+    color: white;
+    border: none;
+    padding: 14px 24px;
+    border-radius: 50px;
+    font-size: 0.92rem;
+    font-weight: 700;
+    text-decoration: none;
+    text-align: center;
+    display: inline-block;
+    transition: transform 0.2s, box-shadow 0.2s;
   }
-  .layer-item.active .layer-num { background: var(--accent); color: white; }
-  .layer-item h4 { font-size: 0.95rem; font-weight: 600; margin-bottom: 2px; }
-  .layer-item p { font-size: 0.82rem; color: var(--text-muted); }
+  .btn-buy:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 30px rgba(74,144,196,0.2);
+  }
+  .section-cta {
+    margin-top: 40px;
+    text-align: center;
+  }
+  .btn-large {
+    padding: 16px 42px;
+  }
 
   /* ─── PRODUCTS ─── */
   .products-grid {
@@ -307,6 +416,13 @@
     display: inline-block; text-decoration: none; text-align: center;
   }
   .btn-buy:hover { background: var(--accent-dark); transform: translateY(-2px); }
+
+  /* ─── SIZE SELECTOR ─── */
+  .size-selector { display: flex; gap: 10px; flex-wrap: wrap; margin: 12px 0; }
+  .size-btn { background: rgba(239,227,214,0.45); border: 2px solid transparent; color: var(--accent-dark); padding: 8px 16px; border-radius: 999px; font-weight: 600; cursor: pointer; transition: all 0.2s; font-size: 0.8rem; }
+  .size-btn:hover { background: rgba(239,227,214,0.7); }
+  .size-btn.active { background: var(--accent); color: white; border-color: var(--accent-dark); }
+  .product-price-display { font-size: 1.3rem; font-weight: 800; color: var(--accent-dark); margin: 10px 0; }
 
   /* ─── WHY CHOOSE ─── */
   .why-section { background: #FBF6F0; }
@@ -603,50 +719,22 @@
   }
   .reveal.visible { opacity: 1; transform: translateY(0); }
 
-  /* ─── DARK MODE ─── */
-  .dark-toggle {
+  .whatsapp-button {
     position: fixed; bottom: 28px; right: 28px; z-index: 200;
-    width: 48px; height: 48px; border-radius: 50%;
-    background: var(--accent); color: white; border: none;
-    font-size: 1.2rem; cursor: pointer;
-    box-shadow: 0 4px 24px rgba(60,31,27,0.35);
-    transition: background 0.2s, transform 0.2s;
+    width: 54px; height: 54px; border-radius: 50%;
+    background: #25D366; color: white; border: none;
+    font-size: 1.4rem; cursor: pointer;
+    box-shadow: 0 8px 30px rgba(37,211,102,0.25);
+    display: grid; place-items: center;
+    transition: transform 0.2s, box-shadow 0.2s;
+    animation: pulse 2.4s ease-in-out infinite;
   }
-  .dark-toggle:hover { transform: scale(1.1); }
+  .whatsapp-button:hover { transform: scale(1.08); box-shadow: 0 12px 32px rgba(37,211,102,0.35); }
 
-  body.dark {
-    background: #140C0A; color: #F2E8DE;
-    --bg: #140C0A;
-    --text: #F2E8DE;
-    --text-muted: #C4B3A4;
-    --primary: rgba(239,227,214,0.12);
-    --secondary: rgba(226,201,180,0.18);
-    --accent: #E2C9B4;
-    --accent-dark: #F2E8DE;
+  @keyframes pulse {
+    0%, 100% { transform: scale(1); box-shadow: 0 8px 30px rgba(37,211,102,0.25); }
+    50% { transform: scale(1.05); box-shadow: 0 12px 36px rgba(37,211,102,0.35); }
   }
-  body.dark nav { background: rgba(20, 12, 10, 0.92); border-color: rgba(226,201,180,0.16); }
-  body.dark .hero {
-    background-color: #140C0A;
-    background-image: url('assets/hero-bed.png');
-  }
-  body.dark .hero-overlay {
-    background: linear-gradient(
-      to bottom,
-      rgba(20, 12, 10, 0.68) 0%,
-      rgba(20, 12, 10, 0.40) 45%,
-      rgba(20, 12, 10, 0.68) 100%
-    );
-  }
-  body.dark .hero h1,
-  body.dark .hero-sub {
-    text-shadow: 0 2px 20px rgba(20, 12, 10, 0.85);
-  }
-  body.dark .product-card, body.dark .review-card, body.dark .about-card-small { background: #201311; }
-  body.dark .why-section, body.dark .faq-section, body.dark .store-section, body.dark .sleep-section { background: #180F0D; }
-  body.dark .why-card, body.dark .sleep-card { background: rgba(255,255,255,0.04); border-color: rgba(226,201,180,0.14); }
-  body.dark .size-table, body.dark .guide-pick { background: #201311; }
-  body.dark .size-table th { background: rgba(226,201,180,0.12); }
-  body.dark footer { background: #0F0807; }
 
   /* ─── RESPONSIVE ─── */
   @media (max-width: 1000px) {
@@ -670,6 +758,7 @@
     }
     .footer-grid { grid-template-columns: 1fr 1fr; }
     .about-card-small { display: none; }
+    .best-sellers-grid { grid-template-columns: repeat(2, 1fr); gap: 24px; }
   }
   @media (max-width: 640px) {
     nav { padding: 16px 5%; }
@@ -691,6 +780,7 @@
     .layer:hover { box-shadow: var(--shadow); }
     .footer-grid { grid-template-columns: 1fr; }
     .footer-bottom { flex-direction: column; text-align: center; }
+    .best-sellers-grid { grid-template-columns: 1fr; gap: 20px; }
   }
   @media (prefers-reduced-motion: reduce) {
     .reviews-slider, .blob { animation: none; }
@@ -726,7 +816,7 @@
     <p class="hero-sub">Experience luxurious comfort with handcrafted mattresses designed for perfect sleep and ultimate relaxation.</p>
     <div class="hero-btns">
       <button class="btn-primary" onclick="document.getElementById('products').scrollIntoView({behavior:'smooth'})">Shop Now</button>
-      <button class="btn-outline" onclick="document.getElementById('layers').scrollIntoView({behavior:'smooth'})">Explore Collection</button>
+      <button class="btn-outline" onclick="document.getElementById('best-sellers').scrollIntoView({behavior:'smooth'})">Explore Collection</button>
     </div>
     <div class="trust-badges">
       <div class="badge"><div class="badge-check">✓</div>Premium Quality</div>
@@ -737,44 +827,99 @@
   </div>
 </section>
 
-<!-- LAYER ANIMATION SECTION -->
-<section class="layers-section" id="layers">
-  <div class="layers-wrap">
-    <div class="layers-info reveal">
-      <div class="section-eyebrow">Technology</div>
-      <h2 class="section-title">Engineered for<br>Perfect Sleep</h2>
-      <p class="section-sub">Each layer is precision-engineered to deliver unmatched support, cooling comfort, and long-lasting durability.</p>
-      <ul class="layer-list" id="layerList">
-        <li class="layer-item active" data-layer="5">
-          <div class="layer-num">1</div>
-          <div><h4>Soft Knit Fabric Cover</h4><p>Breathable, skin-friendly surface for cool, comfortable contact all night long.</p></div>
-        </li>
-        <li class="layer-item" data-layer="4">
-          <div class="layer-num">2</div>
-          <div><h4>Cooling Gel Memory Foam</h4><p>Regulates temperature while contouring precisely to your body shape.</p></div>
-        </li>
-        <li class="layer-item" data-layer="3">
-          <div class="layer-num">3</div>
-          <div><h4>Comfort Foam Layer</h4><p>Medium-density transition foam that provides plush feel and pressure relief.</p></div>
-        </li>
-        <li class="layer-item" data-layer="2">
-          <div class="layer-num">4</div>
-          <div><h4>Pocket Spring Support</h4><p>Individually wrapped springs for targeted support and zero partner disturbance.</p></div>
-        </li>
-        <li class="layer-item" data-layer="1">
-          <div class="layer-num">5</div>
-          <div><h4>High Density Base Foam</h4><p>Durable foundation that maintains shape and structure over the years.</p></div>
-        </li>
-      </ul>
-    </div>
+<!-- BEST SELLERS SHOWCASE -->
+<section class="best-sellers-section" id="best-sellers">
+  <div class="section-header center reveal">
+    <div class="section-eyebrow">Handcrafted Excellence</div>
+    <h2 class="section-title">Our Best-Sellers<br>for Restful Nights</h2>
+    <p class="section-sub">A premium curated range of mattresses designed to deliver support, cooling comfort, and lasting value.</p>
+  </div>
 
-    <div class="layers-stack reveal" id="layerStack">
-      <div class="layer layer-1" onmouseenter="highlightLayer(1)" onmouseleave="resetLayers()">High Density Base Foam</div>
-      <div class="layer layer-2" onmouseenter="highlightLayer(2)" onmouseleave="resetLayers()">Pocket Spring Support</div>
-      <div class="layer layer-3" onmouseenter="highlightLayer(3)" onmouseleave="resetLayers()">Comfort Foam Layer</div>
-      <div class="layer layer-4" onmouseenter="highlightLayer(4)" onmouseleave="resetLayers()">Cooling Gel Memory Foam</div>
-      <div class="layer layer-5" onmouseenter="highlightLayer(5)" onmouseleave="resetLayers()">Soft Knit Fabric Cover</div>
-    </div>
+  <div class="best-sellers-grid reveal">
+    <article class="best-card">
+      <div class="best-card-tag">Best Value</div>
+      <div class="best-card-img">
+        <img src="assets/product-ortho.png" alt="Flip - Dual Sided Foam Mattress" loading="lazy">
+      </div>
+      <div class="best-card-body">
+        <div class="best-card-rating">★★★★★ <span>5.0/5</span></div>
+        <h3>Flip - Dual Sided Foam Mattress</h3>
+        <div class="product-pricing">
+          <span class="product-price">₹6,279</span>
+          <span class="product-old-price">₹7,387</span>
+          <span class="product-discount">15% OFF</span>
+        </div>
+        <ul class="best-card-list">
+          <li>High-density support foam</li>
+          <li>Firm support or soft comfort in one</li>
+        </ul>
+        <div class="size-choices">
+          <button class="size-option" data-price="5499">Single</button>
+          <button class="size-option active" data-price="7499">Double</button>
+          <button class="size-option" data-price="9499">Queen</button>
+          <button class="size-option" data-price="11499">King</button>
+        </div>
+        <a class="btn-buy" href="products.html">Add to Cart</a>
+      </div>
+    </article>
+
+    <article class="best-card">
+      <div class="best-card-tag">Technic Series</div>
+      <div class="best-card-img">
+        <img src="assets/product-luxury.png" alt="Technic - 3 Zone 6D Hexagon Grid" loading="lazy">
+      </div>
+      <div class="best-card-body">
+        <div class="best-card-rating">★★★★★ <span>4.5/5</span></div>
+        <h3>Technic - 3 Zone 6D Hexagon Grid</h3>
+        <div class="product-pricing">
+          <span class="product-price">₹13,999</span>
+          <span class="product-old-price">₹17,947</span>
+          <span class="product-discount">22% OFF</span>
+        </div>
+        <ul class="best-card-list">
+          <li>3 Zone 6D hexagon technology</li>
+          <li>Advanced hyper-elastic compound</li>
+        </ul>
+        <div class="size-choices">
+          <button class="size-option" data-price="11999">Single</button>
+          <button class="size-option" data-price="14999">Double</button>
+          <button class="size-option active" data-price="17999">Queen</button>
+          <button class="size-option" data-price="20999">King</button>
+        </div>
+        <a class="btn-buy" href="products.html">Add to Cart</a>
+      </div>
+    </article>
+
+    <article class="best-card">
+      <div class="best-card-tag">Hybrid Tech</div>
+      <div class="best-card-img">
+        <img src="assets/product-cloud.png" alt="Technic Hybrid - 3 Zone 6D Hexagon Grid" loading="lazy">
+      </div>
+      <div class="best-card-body">
+        <div class="best-card-rating">★★★★★ <span>4.5/5</span></div>
+        <h3>Technic Hybrid - 3 Zone 6D Hexagon Grid</h3>
+        <div class="product-pricing">
+          <span class="product-price">₹16,999</span>
+          <span class="product-old-price">₹22,665</span>
+          <span class="product-discount">25% OFF</span>
+        </div>
+        <ul class="best-card-list">
+          <li>3 Zone 6D hexagon technology</li>
+          <li>Up to 3500 air pockets</li>
+        </ul>
+        <div class="size-choices">
+          <button class="size-option" data-price="14999">Single</button>
+          <button class="size-option" data-price="17999">Double</button>
+          <button class="size-option" data-price="20999">Queen</button>
+          <button class="size-option active" data-price="24999">King</button>
+        </div>
+        <a class="btn-buy" href="products.html">Add to Cart</a>
+      </div>
+    </article>
+  </div>
+
+  <div class="section-cta reveal">
+    <a class="btn-primary btn-large" href="products.html">Explore More</a>
   </div>
 </section>
 
@@ -1275,8 +1420,11 @@
   </div>
 </footer>
 
-<!-- DARK MODE TOGGLE -->
-<button class="dark-toggle" id="darkToggle" title="Toggle dark mode">🌙</button>
+<a class="whatsapp-button" href="https://wa.me/917801017799" target="_blank" rel="noopener noreferrer" title="Chat on WhatsApp">
+  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <path d="M20.52 3.48A11.83 11.83 0 0 0 12 0C5.37 0 0 5.37 0 12c0 2.12.56 4.12 1.62 5.86L0 24l6.4-1.66A11.9 11.9 0 0 0 12 24c6.63 0 12-5.37 12-12 0-3.2-1.25-6.2-3.48-8.52Zm-8.25 17.2c-1.88 0-3.72-.5-5.32-1.45l-.38-.22-3.8.99.99-3.72-.25-.39A9.76 9.76 0 0 1 2.25 12c0-5.37 4.38-9.75 9.75-9.75 2.6 0 5.05 1.02 6.9 2.86a9.75 9.75 0 0 1 2.86 6.9c0 5.38-4.38 9.76-9.75 9.76Zm5.33-7.8c-.23-.12-1.34-.66-1.55-.73-.21-.07-.37-.12-.53.12-.15.23-.57.73-.7.88-.13.15-.26.17-.49.06-.23-.12-.97-.36-1.85-1.14-.68-.6-1.14-1.35-1.27-1.58-.13-.23-.01-.35.09-.47.09-.09.21-.23.31-.35.1-.12.13-.2.2-.33.07-.12.04-.23-.02-.35-.06-.12-.53-1.28-.73-1.76-.2-.46-.4-.4-.55-.41-.14-.01-.3-.01-.46-.01-.16 0-.43.06-.66.29-.23.24-.87.85-.87 2.07 0 1.22.89 2.4 1.01 2.57.12.18 1.74 2.67 4.22 3.74.59.25 1.05.4 1.41.51.59.18 1.13.15 1.56.09.48-.07 1.34-.55 1.53-1.08.19-.53.19-.98.13-1.08-.06-.09-.24-.14-.5-.26Z" fill="white"/>
+  </svg>
+</a>
 
 <script>
   // ── Navbar scroll ──
@@ -1299,16 +1447,18 @@
 
   // ── Layer animation ──
   const stack = document.getElementById('layerStack');
-  const layersObserver = new IntersectionObserver((entries) => {
-    entries.forEach(e => {
-      if (e.isIntersecting) {
-        setTimeout(() => stack.classList.add('layers-exploded'), 400);
-      } else {
-        stack.classList.remove('layers-exploded');
-      }
-    });
-  }, { threshold: 0.4 });
-  layersObserver.observe(stack);
+  if (stack) {
+    const layersObserver = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          setTimeout(() => stack.classList.add('layers-exploded'), 400);
+        } else {
+          stack.classList.remove('layers-exploded');
+        }
+      });
+    }, { threshold: 0.4 });
+    layersObserver.observe(stack);
+  }
 
   function highlightLayer(n) {
     document.querySelectorAll('.layer-item').forEach(el => el.classList.remove('active'));
@@ -1353,12 +1503,31 @@
   const statsSection = document.querySelector('.stats-section');
   if (statsSection) statsObserver.observe(statsSection);
 
-  // ── Dark mode ──
-  const darkToggle = document.getElementById('darkToggle');
-  darkToggle.addEventListener('click', () => {
-    document.body.classList.toggle('dark');
-    darkToggle.textContent = document.body.classList.contains('dark') ? '☀️' : '🌙';
-  });
+  // ── Size selector functionality for Best Sellers ──
+  (function initSizeSelector() {
+    const sizeButtons = document.querySelectorAll('.best-card .size-option');
+    console.log('Found ' + sizeButtons.length + ' size buttons in best sellers');
+    
+    sizeButtons.forEach(button => {
+      button.addEventListener('click', function(e) {
+        e.preventDefault();
+        
+        const bestCard = this.closest('.best-card');
+        const allButtons = bestCard.querySelectorAll('.size-option');
+        allButtons.forEach(btn => btn.classList.remove('active'));
+        
+        this.classList.add('active');
+        
+        const price = this.getAttribute('data-price');
+        const priceDisplay = bestCard.querySelector('.product-price');
+        if (priceDisplay && price) {
+          const formattedPrice = new Intl.NumberFormat('en-IN').format(price);
+          priceDisplay.textContent = '₹' + formattedPrice;
+        }
+      });
+    });
+  })();
+
 </script>
 </body>
 </html>
