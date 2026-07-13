@@ -74,26 +74,27 @@
   const statsSection = document.querySelector('.stats-section');
   if (statsSection) statsObserver.observe(statsSection);
 
-  // ── Size selector functionality for Best Sellers ──
+  // ── Size selector functionality for product cards and best sellers ──
   (function initSizeSelector() {
-    const sizeButtons = document.querySelectorAll('.best-card .size-option');
-    console.log('Found ' + sizeButtons.length + ' size buttons in best sellers');
-    
+    const sizeButtons = document.querySelectorAll('.best-card .size-option, .product-card .size-btn');
     sizeButtons.forEach(button => {
       button.addEventListener('click', function(e) {
         e.preventDefault();
-        
-        const bestCard = this.closest('.best-card');
-        const allButtons = bestCard.querySelectorAll('.size-option');
+
+        const card = this.closest('.best-card') || this.closest('.product-card');
+        if (!card) return;
+
+        const allButtons = card.querySelectorAll('.size-option, .size-btn');
         allButtons.forEach(btn => btn.classList.remove('active'));
-        
+
         this.classList.add('active');
-        
+
         const price = this.getAttribute('data-price');
-        const priceDisplay = bestCard.querySelector('.product-price');
+        const priceDisplay = card.querySelector('.product-price');
         if (priceDisplay && price) {
           const formattedPrice = new Intl.NumberFormat('en-IN').format(price);
           priceDisplay.textContent = '₹' + formattedPrice;
+          priceDisplay.setAttribute('data-display-price', price);
         }
       });
     });
