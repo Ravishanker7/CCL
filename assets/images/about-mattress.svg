@@ -1,0 +1,10 @@
+<svg width="1000" height="700" viewBox="0 0 1000 700" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1000" height="700" fill="#EAF4FF"/>
+  <rect x="120" y="420" width="760" height="130" rx="24" fill="#C6DCEF"/>
+  <rect x="120" y="350" width="760" height="84" rx="16" fill="#D8EAFA"/>
+  <rect x="120" y="292" width="760" height="72" rx="16" fill="#E8F4FF"/>
+  <rect x="110" y="246" width="780" height="56" rx="20" fill="#FFFFFF"/>
+  <rect x="230" y="190" width="540" height="34" rx="10" fill="#A9D3FF"/>
+  <text x="500" y="132" text-anchor="middle" font-family="Arial, sans-serif" font-size="54" font-weight="800" fill="#2A6A9E">Comfort Cave Craftsmanship</text>
+  <text x="500" y="596" text-anchor="middle" font-family="Arial, sans-serif" font-size="28" font-weight="600" fill="#2A6A9E">Quality layers. Better support. Better sleep.</text>
+</svg>
